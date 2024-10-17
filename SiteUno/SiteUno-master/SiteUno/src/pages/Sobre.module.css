@@ -1,0 +1,9 @@
+.image {
+    height: 25rem;
+    object-fit: contain;
+}
+
+.figure {
+    text-align: center;
+    font-size: 12px;
+}

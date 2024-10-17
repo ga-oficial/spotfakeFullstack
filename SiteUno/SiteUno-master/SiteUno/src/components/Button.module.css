@@ -1,0 +1,26 @@
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px 14px;
+}
+
+.column p {
+    margin: 0px 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    border: 1px rgb(0, 0, 0) solid;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1px;
+}
+
+.row img {
+    height: 12rem;
+    width: 7rem;
+}

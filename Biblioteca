@@ -1,0 +1,38 @@
+CREATE TABLE Leitores (
+    ID_Leitor INT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Matricula VARCHAR(20),
+    Telefone VARCHAR(20),
+    Endereco TEXT,
+    Tipo VARCHAR(50)
+);
+
+CREATE TABLE Livros (
+    ID_Livro INT PRIMARY KEY,
+    Titulo VARCHAR(100),
+    Autor VARCHAR(100),
+    Assunto VARCHAR(50),
+    Editora VARCHAR(100),
+    ISBN VARCHAR(20),
+    Quantidade INT
+);
+
+CREATE TABLE Exemplares (
+    ID_Exemplar INT PRIMARY KEY,
+    ID_Livro INT,
+    Estante INT,
+    Prateleira INT,
+    Nicho INT,
+    Status VARCHAR(50),
+    FOREIGN KEY (ID_Livro) REFERENCES Livros(ID_Livro)
+);
+
+CREATE TABLE Emprestimos (
+    ID_Emprestimo INT PRIMARY KEY,
+    ID_Leitor INT,
+    ID_Exemplar INT,
+    Data_Emprestimo DATE,
+    Data_Devolucao DATE,
+    FOREIGN KEY (ID_Leitor) REFERENCES Leitores(ID_Leitor),
+    FOREIGN KEY (ID_Exemplar) REFERENCES Exemplares(ID_Exemplar)
+);
